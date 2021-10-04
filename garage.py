@@ -1,9 +1,9 @@
 class Garage:
 
-    def __init__(self, avail_tickets, used_tickets, total_spaces):
+    def __init__(self, avail_tickets, used_tickets):
         self.avail_tickets = avail_tickets
         self.used_tickets = used_tickets
-        self.total_spaces = total_spaces
+        
 
     def takeTicket(self):
         if self.avail_tickets == []:
@@ -30,7 +30,24 @@ class Garage:
         print(self.used_tickets[ticket])
 
     def leaveGarage(self):
-        pass
+        ticket_given = input("what is your ticket number?")
+        if ticket_given in self.used_tickets:
+            if self.used_tickets[ticket_given] == True:
+                print("Thank You Have a Nice Day")
+                self.avail_tickets.append(ticket_given)
+
+
+            else:
+                payment = input("press a button to pay")
+                self.used_tickets[ticket_given] = True
+                print("Thank You Have a Nice Day")
+                self.avail_tickets.append(ticket_given)
+            
+
+
+        else:
+            print("that ticket doesn't exist in our records!")     
+
 
 
 
@@ -42,5 +59,3 @@ class Garage:
 # Should equal True before leave garage adds the ticket back to the avail_tickets list
 # Slack me if you have any questions. I'll see you at 2est tomorrow
 
-def run():
-    slcgarage = Garage([1,2,3,4,5,6,7,8,9,10], {}, 10)
