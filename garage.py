@@ -59,3 +59,5 @@ class Garage:
 # Should equal True before leave garage adds the ticket back to the avail_tickets list
 # Slack me if you have any questions. I'll see you at 2est tomorrow
 
+def run():
+    slcgarage = Garage([1,2,3,4,5,6,7,8,9,10], {}, 10)
